@@ -1,13 +1,13 @@
 
 $(document).ready(function(){
 
-    var randomnumber;
+    var randomNumber = 10;
     var clicks = 1;
 
     /*--- Page Load New Game ---*/
     function newGame(){
-        randomnumber = Math.floor((Math.random() * 100) + 1);
-        console.log(randomnumber);
+        // randomNumber = Math.floor((Math.random() * 100) + 1);
+        console.log(randomNumber);
     }
     
     newGame();
@@ -21,31 +21,33 @@ $(document).ready(function(){
     /*--- Click to Submit Guess ---*/
     $("#guessButton").click(function(e) {
         e.preventDefault();
-        if ($("#userGuess").val() > randomnumber ) {
+        var userValue = parseInt($("#userGuess").val());
+        console.log(userValue, randomNumber);
+        if (userValue > randomNumber ) {
             $("#feedback").text("HOT!!");
         }
-        else if ($("#userGuess").val() > randomnumber + 5) {
+        if (userValue > randomNumber + 5) {
             $("#feedback").text("Warm!");
         }
-        else if ($("#userGuess").val() > randomnumber + 10) {
+        if (userValue > randomNumber + 10) {
             $("#feedback").text("Lukewarm!");
         }
-        else if ($("#userGuess").val() > randomnumber + 20) {
+        if (userValue > randomNumber + 20) {
             $("#feedback").text("Cold!");
         }
-        else if ($("#userGuess").val() < randomnumber ) {
+        if (userValue < randomNumber ) {
             $("#feedback").text("HOT!!");
         }
-        else if ($("#userGuess").val() < randomnumber - 5) {
+        if (userValue < randomNumber - 5) {
             $("#feedback").text("Warm!");
         }
-        else if ($("#userGuess").val() < randomnumber - 10) {
+        if (userValue < randomNumber - 10) {
             $("#feedback").text("Lukewarm!");
         }
-        else if ($("#userGuess").val() < randomnumber - 20) {
+        if (userValue < randomNumber - 20) {
             $("#feedback").text("Cold!");
-        }
-        else  {
+        }    
+        if (userValue === randomNumber)  {
             alert("You are the winner, hahahahaha, you are the winner, hahaahaa");
         }
         
