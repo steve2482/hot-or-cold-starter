@@ -22,7 +22,9 @@ $(document).ready(function(){
     $("#guessButton").click(function(e) {
         e.preventDefault();
         var userValue = parseInt($("#userGuess").val());
-        console.log(userValue, randomNumber);
+        if (isNaN(userValue)) {
+            alert("Please enter a valid number!")
+        }
         if (userValue > randomNumber ) {
             $("#feedback").text("HOT!!");
         }
