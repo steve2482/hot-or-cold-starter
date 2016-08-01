@@ -1,12 +1,12 @@
 
 $(document).ready(function(){
 
-    var randomNumber = 10;
+    var randomNumber;
     var clicks = 1;
 
     /*--- Page Load New Game ---*/
     function newGame(){
-        // randomNumber = Math.floor((Math.random() * 100) + 1);
+        randomNumber = Math.floor((Math.random() * 100) + 1);
         console.log(randomNumber);
     }
     
