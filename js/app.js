@@ -1,12 +1,11 @@
 
 $(document).ready(function(){
 
-    var randomNumber = 10;
     var clicks = 1;
 
     /*--- Page Load New Game ---*/
     function newGame(){
-        // randomNumber = Math.floor((Math.random() * 100) + 1);
+        randomNumber = Math.floor((Math.random() * 100) + 1);
         console.log(randomNumber);
     }
     
@@ -23,7 +22,7 @@ $(document).ready(function(){
         e.preventDefault();
         var userValue = parseInt($("#userGuess").val());
         if (isNaN(userValue)) {
-            alert("Please enter a valid number!")
+            $("#feedback").text("Please enter a valid number!");
         }
         if (userValue > randomNumber ) {
             $("#feedback").text("HOT!!");
@@ -50,7 +49,7 @@ $(document).ready(function(){
             $("#feedback").text("Cold!");
         }    
         if (userValue === randomNumber)  {
-            alert("You are the winner, hahahahaha, you are the winner, hahaahaa");
+            $("#feedback").text("You are the winner, hahahahaha, you are the winner, hahaahaa");
         }
         
         
